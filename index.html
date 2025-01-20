@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estudantes de LCC3T</title>
+    <link rel="stylesheet" href="Estilo.css">
+</head>
+<body style="font-family: Arial, sans-serif;">
+    <div class="container" id="container">
+        <div class="left-side"> 
+            <div class="logo-container">
+                <img src="unnamed.png" alt="Logo_do_Imetro" class="logo" style="padding: 5%;width:150px ;">
+            </div>
+            <form id="studentForm">
+               <div class="titulo"><center><h2 style="font-size: 200%;">NG-SISA</h2><br></center></div>
+
+                <div class="form-group">
+                    <label for="ID">ID</label>
+                    <input type="number" id="ID" placeholder="ID do estudante" disabled>
+                </div>
+                <div class="form-group">
+                    <label for="name">Nome do Estudante</label>
+                    <input type="text" id="name" placeholder="Nome do estudante">
+                </div>
+                <div class="form-group">
+                    <label for="matricula">Número de Matrícula</label>
+                    <input type="text" id="matricula" placeholder="Número de matrícula">
+                </div>
+
+                <div class="form-group">
+                    <label for="nota_atribuida">Nota atribuída</label>
+                    <input type="number" placeholder="Nota atribuída" id="nota_atribuida">
+                </div>
+
+                <div class="buttons">
+                    <button type="button" onclick="clearForm()" style="background-color: darkcyan; color: white;">Limpar</button>
+                    <button type="button" onclick="saveGrades()"style="background-color: darkcyan; color: white;">Guardar</button>
+                    <button type="button" onclick="showSecondaryForm()"style="background-color: darkcyan; color: white;">Consultar</button>
+                    <button type="button" onclick="clearDatabase()" style="background-color: darkcyan; color: white;">Limpar Base de Dados</button>
+                </div>
+            </form>
+            <div id="relogio"></div>
+        </div>
+
+        <div class="right-side">
+            <img src="http://www.imetroangola.com/img/3.jpeg" alt="Imagem Animada">
+
+            <!-- Formulário secundário -->
+            <div id="secondaryForm" class="popup" style="display: none;">
+                <div class="popup-content">
+                    <span class="close" onclick="closeSecondaryForm()">&times;</span>
+                    <h3>Consultar Estudante</h3>
+                    <form id="consultForm">
+                        <div class="form-group">
+                            <label for="consultaMatricula">Número de Matrícula</label>
+                            <input type="text" id="consultaMatricula" placeholder="Digite o número de matrícula" oninput="autoFillStudentDetails()">
+                        </div>
+                        <div class="form-group">
+                            <label for="consultaNome">Nome Completo</label>
+                            <input type="text" id="consultaNome" placeholder="Nome do estudante" disabled>
+                        </div>
+                        <div class="form-group">
+                            <label for="consultaNota">Nota Atribuída</label>
+                            <input type="text" id="consultaNota" placeholder="Nota atribuída" disabled>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        &copy; LCC3T Angola 2024 <a href="#"></a>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
